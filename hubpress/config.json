@@ -8,13 +8,13 @@
     "title": "Just an ordinary developer",
     "description": "Sharing ideas and experiences",
     "cover": "8bit-dreaming.jpg",
-    "postsPerPage": "10"
+    "postsPerPage": "5"
   },
   "socialnetwork": {
     "linkedin": "linkedin.com/in/carmosantiago ",
     "github": "https://github.com/emilio2hd"
   },
   "theme": {
-    "name": "uno"
+    "name": "ghostium"
   }
 }
