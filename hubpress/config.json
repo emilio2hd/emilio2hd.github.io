@@ -7,7 +7,10 @@
   "site": {
     "postsPerPage": "10"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "linkedin": "linkedin.com/in/carmosantiago ",
+    "github": "https://github.com/emilio2hd"
+  },
   "theme": {
     "name": "casper"
   }
