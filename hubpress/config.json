@@ -5,6 +5,7 @@
     "branch": "master"
   },
   "site": {
+    "cover": "8bit-dreaming.jpg",
     "postsPerPage": "10"
   },
   "socialnetwork": {
