@@ -1,0 +1,4 @@
+= First post
+:hp-tags: HubPress, Blog, Open Source
+
+This is my first post using hubpress
