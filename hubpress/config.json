@@ -5,6 +5,8 @@
     "branch": "master"
   },
   "site": {
+    "title": "Just an ordinary developer",
+    "description": "Sharing ideas and experiences",
     "cover": "8bit-dreaming.jpg",
     "postsPerPage": "10"
   },
