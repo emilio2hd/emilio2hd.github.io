@@ -1,0 +1,2 @@
+= First post
+:hp-tags: HubPress, Blog, Open Source
