@@ -9,7 +9,8 @@
     "description": "Sharing ideas and experiences",
     "logo": "",
     "cover": "images/8bit-dreaming.jpg",
-    "postsPerPage": "5"
+    "postsPerPage": "5",
+    "disqus": "carmosantiago"
   },
   "socialnetwork": {
     "linkedin": "linkedin.com/in/carmosantiago ",
