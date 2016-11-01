@@ -4,7 +4,11 @@
     "repositoryName": "emilio2hd.github.io",
     "branch": "master"
   },
+  "site": {
+    "postsPerPage": "10"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
