@@ -1,0 +1,69 @@
+= Ambiente de Desenvolvimento Rails + Vagrant + Ansible
+:hp-tags: Desenvolvimento, Rails, Vagrant, Ansible, Linux, Ambiente
+
+Ola pessoal!
+
+Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.
+
+O ambiente é com posto por:
+* Ubuntu 14.04 (trusty32)
+* Ruby 2.2.0 + rbevn
+* Gem Rails ~> 4.2
+* SQlite 3 gem sqlite3
+* MySQL Server + gem mysql2
+* PostgreSQL 9.3 + gem pg
+* ImageMagick + rmagick gem
+* Vim
+
+Primeiro, é necessário instalar Virtualbox, no windows, pode fazer download através deste link. Para linux, execute:
+[source]
+----
+sudo apt-get install virtualbox
+----
+
+Se não funcionar, visite este link para maiores informações:
+
+Depois é necessário instalar o Vagrant. No windows, faca download por este link, no linux:
+[listing]
+sudo apt-get install dpkg-dev virtualbox-dkms
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+sudo dpkg -i vagrant_1.7.2_x86_64.deb
+sudo apt-get install linux-headers-$(uname -r)
+sudo dpkg-reconfigure virtualbox-dkms
+
+* WARNING: A versão do Vagrant tem que ser >= 1.5
+
+Agora é instalar o Git. No windows faça download aqui, no linux:
+[source]
+----
+sudo apt-get install git
+----
+Clone esse repositório:
+[source]
+----
+git clone https://github.com/emilio2hd/development-ubuntu-ruby-rails-ansible
+----
+Com o repositório baixado, entre nele e inicie o vagrant:
+[source]
+----
+cd development-ubuntu-ruby-rails-ansible
+vagrant up
+----
+Agora saia e vá tomar um café, comer alguma coisa, pois vai levar um bom tempo.  :D Na primeira vez que iniciar a VM o vagrant vai provisionar automaticamente, se alguma coisa der errado, é só executar vagrant provision que o provisionamento será executado novamente (Não se preocupe , não vai instalar tudo de novo pois o ansible checa o que já foi instalado). 
+
+Depois que estiver tudo instalado, acesse o terminal do vagrant e crie uma nova aplicação:
+[source]
+----
+vagrant ssh
+rails new /vagrant
+----
+* WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.
+
+Aplicação deve ficar na pasta /vagrant pois essa é montada da sua maquina física na maquina virtual.
+
+A aplicação deve ser iniciada no terminar da VM assim:
+[source]
+----
+rails s -b 0.0.0.0
+----
+O ambiente permite você acessar o banco de dados remotamente, acesse esse link para saber como configurar seu cliente de banco de dados.
