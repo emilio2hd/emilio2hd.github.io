@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 13:52:28 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 14:54:00 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Vou deixar algumas dúvidas em forma de FAQ</p>
@@ -190,7 +190,111 @@ ALTER USER postgres WITH PASSWORD '_SENHA_';
 <pre class="highlight"><code>bundle install</code></pre>
 </div>
 </div>
-</div>]]></description><link>https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html</link><guid isPermaLink="true">https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html</guid><category><![CDATA[Ubuntu]]></category><category><![CDATA[ Trusty]]></category><category><![CDATA[ Ruby]]></category><category><![CDATA[ Rails]]></category><category><![CDATA[ Iniciantes]]></category><category><![CDATA[ Desenvolvimento]]></category><category><![CDATA[ Junior]]></category><dc:creator><![CDATA[Emílio S. do Carmo]]></dc:creator><pubDate>Wed, 18 Jan 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Instalando Ruby no Linux]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html</link><guid isPermaLink="true">https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html</guid><category><![CDATA[Ubuntu]]></category><category><![CDATA[ Trusty]]></category><category><![CDATA[ Ruby]]></category><category><![CDATA[ Rails]]></category><category><![CDATA[ Iniciantes]]></category><category><![CDATA[ Desenvolvimento]]></category><category><![CDATA[ Junior]]></category><dc:creator><![CDATA[Emílio S. do Carmo]]></dc:creator><pubDate>Wed, 18 Jan 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Ambiente de Desenvolvimento Rails + Vagrant + Ansible]]></title><description><![CDATA[<div class="paragraph">
+<p>Ola pessoal!</p>
+</div>
+<div class="paragraph">
+<p>Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.</p>
+</div>
+<div class="paragraph">
+<p>O ambiente é com posto por:
+* Ubuntu 14.04 (trusty32)
+* Ruby 2.2.0 + rbevn
+* Gem Rails ~&gt; 4.2
+* SQlite 3 gem sqlite3
+* MySQL Server + gem mysql2
+* PostgreSQL 9.3 + gem pg
+* ImageMagick + rmagick gem
+* Vim</p>
+</div>
+<div class="paragraph">
+<p>Primeiro, é necessário instalar Virtualbox, no windows, pode fazer download através deste link. Para linux, execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install virtualbox</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Se não funcionar, visite este link para maiores informações:</p>
+</div>
+<div class="paragraph">
+<p>Depois é necessário instalar o Vagrant. No windows, faca download por este link, no linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo apt-get install dpkg-dev virtualbox-dkms
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+sudo dpkg -i vagrant_1.7.2_x86_64.deb
+sudo apt-get install linux-headers-$(uname -r)
+sudo dpkg-reconfigure virtualbox-dkms</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WARNING: A versão do Vagrant tem que ser &gt;= 1.5</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Agora é instalar o Git. No windows faça download aqui, no linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clone esse repositório:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>git clone https://github.com/emilio2hd/development-ubuntu-ruby-rails-ansible</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Com o repositório baixado, entre nele e inicie o vagrant:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cd development-ubuntu-ruby-rails-ansible
+vagrant up</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Agora saia e vá tomar um café, comer alguma coisa, pois vai levar um bom tempo.  :D Na primeira vez que iniciar a VM o vagrant vai provisionar automaticamente, se alguma coisa der errado, é só executar vagrant provision que o provisionamento será executado novamente (Não se preocupe , não vai instalar tudo de novo pois o ansible checa o que já foi instalado).</p>
+</div>
+<div class="paragraph">
+<p>Depois que estiver tudo instalado, acesse o terminal do vagrant e crie uma nova aplicação:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>vagrant ssh
+rails new /vagrant</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aplicação deve ficar na pasta /vagrant pois essa é montada da sua maquina física na maquina virtual.</p>
+</div>
+<div class="paragraph">
+<p>A aplicação deve ser iniciada no terminar da VM assim:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>rails s -b 0.0.0.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>O ambiente permite você acessar o banco de dados remotamente, acesse esse link para saber como configurar seu cliente de banco de dados.</p>
+</div>]]></description><link>https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html</link><guid isPermaLink="true">https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html</guid><category><![CDATA[Desenvolvimento]]></category><category><![CDATA[ Rails]]></category><category><![CDATA[ Vagrant]]></category><category><![CDATA[ Ansible]]></category><category><![CDATA[ Linux]]></category><category><![CDATA[ Ambiente]]></category><dc:creator><![CDATA[Emílio S. do Carmo]]></dc:creator><pubDate>Wed, 18 Jan 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Instalando Ruby no Linux]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Neste pequeno post irei explicar como instalar ruby no linux. Estarei utilizando como base o ubuntu.</p>
