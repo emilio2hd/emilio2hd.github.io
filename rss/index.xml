@@ -1,4 +1,196 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 13:24:06 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Instalando Ruby no Linux]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 13:52:28 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vou deixar algumas dúvidas em forma de FAQ</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_compilar_meus_assests_para_colocar_em_produ_o_br">Como faço compilar meus assests para colocar em produção?<br></h4>
+<div class="paragraph">
+<p>Instale o nodejs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install nodejs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Na pasta do seu projeto, execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle exec rake assets:precompile RAILS_ENV=production</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_sqlite_no_meu_projeto">Como faço para usar sqlite no meu projeto?</h4>
+<div class="paragraph">
+<p>Instale a lib libsqlite3-dev</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install libsqlite3-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>gem 'sqlite3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coloque no database.yml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">development:
+  adapter: sqlite3
+  #database: ":memory:" # Se quiser banco em memória
+  database: db/development.sqlite3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_gem_mysql2_no_meu_projeto">Como faço para usar gem mysql2 no meu projeto?</h4>
+<div class="paragraph">
+<p>Instale a lib libmysqlclient-dev</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install libmysqlclient-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">gem 'mysql2'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coloque no database.yml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">development:
+  adapter: mysql2
+  host: localhost
+  port: 3307
+  username: root
+  password: _SENHA_
+  database: _NOME_DO_BANCO_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_gem_postgresql_no_meu_projeto">Como faço para usar gem postgresql no meu projeto?</h4>
+<div class="paragraph">
+<p>Instale as libs abaixo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install postgresql-contrib libpq-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">gem 'pg'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Crie o banco com:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">sudo su postgres -c psql
+CREATE DATABASE _NOME_DO_BANCO_;
+\q</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configure a senha do usuário postgres:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">sudo su postgres -c psql template1
+ALTER USER postgres WITH PASSWORD '_SENHA_';
+\q</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coloque no database.yml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: _SENHA_
+  database: _NOME_DO_BANCO_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_imagemagick_rmagick">Como faço para usar ImageMagick + RMagick?</h4>
+<div class="paragraph">
+<p>Instale as seguintes libs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install imagemagick libmagickwand-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">gem 'rmagick'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+</div>]]></description><link>https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html</link><guid isPermaLink="true">https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html</guid><category><![CDATA[Ubuntu]]></category><category><![CDATA[ Trusty]]></category><category><![CDATA[ Ruby]]></category><category><![CDATA[ Rails]]></category><category><![CDATA[ Iniciantes]]></category><category><![CDATA[ Desenvolvimento]]></category><category><![CDATA[ Junior]]></category><dc:creator><![CDATA[Emílio S. do Carmo]]></dc:creator><pubDate>Wed, 18 Jan 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Instalando Ruby no Linux]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Neste pequeno post irei explicar como instalar ruby no linux. Estarei utilizando como base o ubuntu.</p>
