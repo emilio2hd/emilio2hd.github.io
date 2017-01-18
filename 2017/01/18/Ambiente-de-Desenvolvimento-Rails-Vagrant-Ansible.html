@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/main.min.css?v=1484751240187"/>
-    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/custom.css?v=1484751240187"/>
-    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1484751240187"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/main.min.css?v=1484751649837"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/custom.css?v=1484751649837"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1484751649837"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1484751240187"></script>
+    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1484751649837"></script>
 
     <link rel="canonical" href="https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html" />
     <meta name="referrer" content="origin" />
@@ -192,16 +192,34 @@ null
 <div class="paragraph">
 <p>Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.</p>
 </div>
-<div class="paragraph">
-<p>O ambiente é com posto por:
-* Ubuntu 14.04 (trusty32)
-* Ruby 2.2.0 + rbevn
-* Gem Rails ~&gt; 4.2
-* SQlite 3 gem sqlite3
-* MySQL Server + gem mysql2
-* PostgreSQL 9.3 + gem pg
-* ImageMagick + rmagick gem
-* Vim</p>
+<div class="ulist">
+<div class="title">O ambiente é com posto por</div>
+<ul>
+<li>
+<p>Ubuntu 14.04 (trusty32)</p>
+</li>
+<li>
+<p>Ruby 2.2.0 + rbevn</p>
+</li>
+<li>
+<p>Gem Rails ~&gt; 4.2</p>
+</li>
+<li>
+<p>SQlite 3 gem sqlite3</p>
+</li>
+<li>
+<p>MySQL Server + gem mysql2</p>
+</li>
+<li>
+<p>PostgreSQL 9.3 + gem pg</p>
+</li>
+<li>
+<p>ImageMagick + rmagick gem</p>
+</li>
+<li>
+<p>Vim</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Primeiro, é necessário instalar Virtualbox, no windows, pode fazer download através deste link. Para linux, execute:</p>
@@ -226,12 +244,17 @@ sudo apt-get install linux-headers-$(uname -r)
 sudo dpkg-reconfigure virtualbox-dkms</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>WARNING: A versão do Vagrant tem que ser &gt;= 1.5</p>
-</li>
-</ul>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+A versão do Vagrant tem que ser &gt;= 1.5
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Agora é instalar o Git. No windows faça download aqui, no linux:</p>
@@ -270,12 +293,17 @@ vagrant up</code></pre>
 rails new /vagrant</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.</p>
-</li>
-</ul>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+No windows, vai ser necessário instalar Cygwin com openssh client.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Aplicação deve ficar na pasta /vagrant pois essa é montada da sua maquina física na maquina virtual.</p>
@@ -366,7 +394,7 @@ rails new /vagrant</code></pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1484751240187"></script>
+    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1484751649837"></script>
 
 
   </body>
