@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 15:04:15 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 15:06:19 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Vou deixar algumas dúvidas em forma de FAQ</p>
@@ -194,7 +194,7 @@ ALTER USER postgres WITH PASSWORD '_SENHA_';
 <p>Ola pessoal!</p>
 </div>
 <div class="paragraph">
-<p>Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.</p>
+<p>Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar no Windows e no Ubuntu.</p>
 </div>
 <div class="ulist">
 <div class="title">O ambiente é com posto por</div>
