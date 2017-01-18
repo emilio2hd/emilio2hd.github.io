@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Ambiente de Desenvolvimento Rails + Vagrant + Ansible</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ambiente de Desenvolvimento Rails + Vagrant + Ansible">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ambiente de Desenvolvimento Rails + Vagrant + Ansible">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/main.min.css?v=1484751240187"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/custom.css?v=1484751240187"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1484751240187"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1484751240187"></script>
+
+    <link rel="canonical" href="https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Just an ordinary developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ambiente de Desenvolvimento Rails + Vagrant + Ansible" />
+    <meta property="og:description" content="Ola pessoal! Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar" />
+    <meta property="og:url" content="https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html" />
+    <meta property="article:tag" content="Desenvolvimento" />
+    <meta property="article:tag" content=" Rails" />
+    <meta property="article:tag" content=" Vagrant" />
+    <meta property="article:tag" content=" Ansible" />
+    <meta property="article:tag" content=" Linux" />
+    <meta property="article:tag" content=" Ambiente" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ambiente de Desenvolvimento Rails + Vagrant + Ansible" />
+    <meta name="twitter:description" content="Ola pessoal! Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar" />
+    <meta name="twitter:url" content="https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Just an ordinary developer" href="https://emilio2hd.github.io/rss/" />
+  </head>
+  <body class="post-template tag-Desenvolvimento tag-Rails tag-Vagrant tag-Ansible tag-Linux tag-Ambiente">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://emilio2hd.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://emilio2hd.github.io" title="Just an ordinary developer" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://emilio2hd.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://github.com/emilio2hd" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="linkedin.com/in/carmosantiago " title="LinkedIn" target="_blank">
+              <i class="fa fa-linkedin"></i>LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-Desenvolvimento tag-Rails tag-Vagrant tag-Ansible tag-Linux tag-Ambiente">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2017-01-18" itemprop="datePublished">
+                  13 hours ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://emilio2hd.github.io/tag/Desenvolvimento/">Desenvolvimento</a>, <a href="https://emilio2hd.github.io/tag/Rails/"> Rails</a>, <a href="https://emilio2hd.github.io/tag/Vagrant/"> Vagrant</a>, <a href="https://emilio2hd.github.io/tag/Ansible/"> Ansible</a>, <a href="https://emilio2hd.github.io/tag/Linux/"> Linux</a>, <a href="https://emilio2hd.github.io/tag/Ambiente/"> Ambiente</a></span>
+                  </span>
+                </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://emilio2hd.github.io/2017/01/18/Ambiente-de-Desenvolvimento-Rails-Vagrant-Ansible.html" itemprop="url" data-pjax title="Ambiente de Desenvolvimento Rails + Vagrant + Ansible">Ambiente de Desenvolvimento Rails + Vagrant + Ansible</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/3453759?v&#x3D;3" alt="Emílio S. do Carmo">
+                </a>
+              <div class="post-author-info">
+                <a href="" class="post-author-name">
+                  Emílio S. do Carmo
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div class="paragraph">
+<p>Ola pessoal!</p>
+</div>
+<div class="paragraph">
+<p>Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.</p>
+</div>
+<div class="paragraph">
+<p>O ambiente é com posto por:
+* Ubuntu 14.04 (trusty32)
+* Ruby 2.2.0 + rbevn
+* Gem Rails ~&gt; 4.2
+* SQlite 3 gem sqlite3
+* MySQL Server + gem mysql2
+* PostgreSQL 9.3 + gem pg
+* ImageMagick + rmagick gem
+* Vim</p>
+</div>
+<div class="paragraph">
+<p>Primeiro, é necessário instalar Virtualbox, no windows, pode fazer download através deste link. Para linux, execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install virtualbox</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Se não funcionar, visite este link para maiores informações:</p>
+</div>
+<div class="paragraph">
+<p>Depois é necessário instalar o Vagrant. No windows, faca download por este link, no linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo apt-get install dpkg-dev virtualbox-dkms
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
+sudo dpkg -i vagrant_1.7.2_x86_64.deb
+sudo apt-get install linux-headers-$(uname -r)
+sudo dpkg-reconfigure virtualbox-dkms</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WARNING: A versão do Vagrant tem que ser &gt;= 1.5</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Agora é instalar o Git. No windows faça download aqui, no linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clone esse repositório:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>git clone https://github.com/emilio2hd/development-ubuntu-ruby-rails-ansible</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Com o repositório baixado, entre nele e inicie o vagrant:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>cd development-ubuntu-ruby-rails-ansible
+vagrant up</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Agora saia e vá tomar um café, comer alguma coisa, pois vai levar um bom tempo.  :D Na primeira vez que iniciar a VM o vagrant vai provisionar automaticamente, se alguma coisa der errado, é só executar vagrant provision que o provisionamento será executado novamente (Não se preocupe , não vai instalar tudo de novo pois o ansible checa o que já foi instalado).</p>
+</div>
+<div class="paragraph">
+<p>Depois que estiver tudo instalado, acesse o terminal do vagrant e crie uma nova aplicação:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>vagrant ssh
+rails new /vagrant</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aplicação deve ficar na pasta /vagrant pois essa é montada da sua maquina física na maquina virtual.</p>
+</div>
+<div class="paragraph">
+<p>A aplicação deve ser iniciada no terminar da VM assim:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>rails s -b 0.0.0.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>O ambiente permite você acessar o banco de dados remotamente, acesse esse link para saber como configurar seu cliente de banco de dados.</p>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/3453759?v&#x3D;3" alt="Emílio S. do Carmo">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Emílio S. do Carmo</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">January 18, 2017</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Just an ordinary developer</span>. 2017. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'carmosantiago'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1484751240187"></script>
+
+
+  </body>
+</html>
