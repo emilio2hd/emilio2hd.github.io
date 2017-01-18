@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/main.min.css?v=1484747548923"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/custom.css?v=1484747548923"/>
+    <link rel="stylesheet" href="//emilio2hd.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1484747548923"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1484747548923"></script>
+
+    <link rel="canonical" href="https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Just an ordinary developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14" />
+    <meta property="og:description" content="Vou deixar algumas dúvidas em forma de FAQ Como faço compilar meus assests para colocar em produção? Instale o nodejs: sudo apt-get install nodejs Na pasta do seu projeto, execute: bundle exec rake assets:precompile RAILS_ENV&#x3D;production Como faço para usar sqlite no meu projeto? Instale a lib libsqlite3-dev" />
+    <meta property="og:url" content="https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html" />
+    <meta property="article:tag" content="Ubuntu" />
+    <meta property="article:tag" content=" Trusty" />
+    <meta property="article:tag" content=" Ruby" />
+    <meta property="article:tag" content=" Rails" />
+    <meta property="article:tag" content=" Iniciantes" />
+    <meta property="article:tag" content=" Desenvolvimento" />
+    <meta property="article:tag" content=" Junior" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14" />
+    <meta name="twitter:description" content="Vou deixar algumas dúvidas em forma de FAQ Como faço compilar meus assests para colocar em produção? Instale o nodejs: sudo apt-get install nodejs Na pasta do seu projeto, execute: bundle exec rake assets:precompile RAILS_ENV&#x3D;production Como faço para usar sqlite no meu projeto? Instale a lib libsqlite3-dev" />
+    <meta name="twitter:url" content="https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Just an ordinary developer" href="https://emilio2hd.github.io/rss/" />
+  </head>
+  <body class="post-template tag-Ubuntu tag-Trusty tag-Ruby tag-Rails tag-Iniciantes tag-Desenvolvimento tag-Junior">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://emilio2hd.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://emilio2hd.github.io" title="Just an ordinary developer" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://emilio2hd.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://github.com/emilio2hd" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="linkedin.com/in/carmosantiago " title="LinkedIn" target="_blank">
+              <i class="fa fa-linkedin"></i>LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-Ubuntu tag-Trusty tag-Ruby tag-Rails tag-Iniciantes tag-Desenvolvimento tag-Junior">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2017-01-18" itemprop="datePublished">
+                  12 hours ago
+                </time>
+              </li>
+                <li class="post-meta-item">
+                  <span class="tags"><i class="fa fa-tags"></i>
+                      <span>
+                      <a href="https://emilio2hd.github.io/tag/Ubuntu/">Ubuntu</a>, <a href="https://emilio2hd.github.io/tag/Trusty/"> Trusty</a>, <a href="https://emilio2hd.github.io/tag/Ruby/"> Ruby</a>, <a href="https://emilio2hd.github.io/tag/Rails/"> Rails</a>, <a href="https://emilio2hd.github.io/tag/Iniciantes/"> Iniciantes</a>, <a href="https://emilio2hd.github.io/tag/Desenvolvimento/"> Desenvolvimento</a>, <a href="https://emilio2hd.github.io/tag/Junior/"> Junior</a></span>
+                  </span>
+                </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://emilio2hd.github.io/2017/01/18/Duvidas-Frequentes-de-Iniciante-em-Rails-com-Ubuntu-14.html" itemprop="url" data-pjax title="Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14">Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/3453759?v&#x3D;3" alt="Emílio S. do Carmo">
+                </a>
+              <div class="post-author-info">
+                <a href="" class="post-author-name">
+                  Emílio S. do Carmo
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vou deixar algumas dúvidas em forma de FAQ</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_compilar_meus_assests_para_colocar_em_produ_o_br">Como faço compilar meus assests para colocar em produção?<br></h4>
+<div class="paragraph">
+<p>Instale o nodejs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install nodejs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Na pasta do seu projeto, execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle exec rake assets:precompile RAILS_ENV=production</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_sqlite_no_meu_projeto">Como faço para usar sqlite no meu projeto?</h4>
+<div class="paragraph">
+<p>Instale a lib libsqlite3-dev</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install libsqlite3-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>gem 'sqlite3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coloque no database.yml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">development:
+  adapter: sqlite3
+  #database: ":memory:" # Se quiser banco em memória
+  database: db/development.sqlite3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_gem_mysql2_no_meu_projeto">Como faço para usar gem mysql2 no meu projeto?</h4>
+<div class="paragraph">
+<p>Instale a lib libmysqlclient-dev</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install libmysqlclient-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">gem 'mysql2'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coloque no database.yml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">development:
+  adapter: mysql2
+  host: localhost
+  port: 3307
+  username: root
+  password: _SENHA_
+  database: _NOME_DO_BANCO_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_gem_postgresql_no_meu_projeto">Como faço para usar gem postgresql no meu projeto?</h4>
+<div class="paragraph">
+<p>Instale as libs abaixo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install postgresql-contrib libpq-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">gem 'pg'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Crie o banco com:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">sudo su postgres -c psql
+CREATE DATABASE _NOME_DO_BANCO_;
+\q</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configure a senha do usuário postgres:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">sudo su postgres -c psql template1
+ALTER USER postgres WITH PASSWORD '_SENHA_';
+\q</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Coloque no database.yml:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: _SENHA_
+  database: _NOME_DO_BANCO_</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_como_fa_o_para_usar_imagemagick_rmagick">Como faço para usar ImageMagick + RMagick?</h4>
+<div class="paragraph">
+<p>Instale as seguintes libs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo apt-get install imagemagick libmagickwand-dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adicione no Gemfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">gem 'rmagick'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>bundle install</code></pre>
+</div>
+</div>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/3453759?v&#x3D;3" alt="Emílio S. do Carmo">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Emílio S. do Carmo</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">January 18, 2017</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Just an ordinary developer</span>. 2017. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'carmosantiago'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//emilio2hd.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1484747548923"></script>
+
+
+  </body>
+</html>
