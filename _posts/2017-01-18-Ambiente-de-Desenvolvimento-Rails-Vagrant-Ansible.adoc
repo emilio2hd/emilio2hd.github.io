@@ -20,7 +20,6 @@ Primeiro, é necessário instalar Virtualbox, no windows, pode fazer download at
 ----
 sudo apt-get install virtualbox
 ----
-
 Se não funcionar, visite este link para maiores informações:
 
 Depois é necessário instalar o Vagrant. No windows, faca download por este link, no linux:
