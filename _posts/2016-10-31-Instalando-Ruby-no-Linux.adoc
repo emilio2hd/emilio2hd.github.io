@@ -1,2 +1,44 @@
-= First post
-:hp-tags: HubPress, Blog, Open Source
+= Instalando Ruby no Linux
+:hp-tags: Ruby, Linux, Instalação
+
+Neste pequeno post irei explicar como instalar ruby no linux. Estarei utilizando como base o ubuntu.
+```
+$ sudo apt-get update
+$ sudo apt-get install curl git-core build-essential zlib1g-dev libssl-dev libreadline-dev libffi-dev libyaml-dev libsqlite3-dev sqlite3 libcurl4-openssl-dev libxml2-dev libxslt1-dev python-software-properties
+```
+##### Instalando rbenv
+O rbenv será instalado na pasta home, seu caminho será adicionado o à variável $PATH e um comando de inicialização será adicionado ao ~/.bashrc
+
+:compat mode: true
+```
+$ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+```
+Para as alterações serem aplicadas, reinicie o shell:
+```
+$ exec $SHELL
+```
+Verifique se foi instalado corretamente, execute o comando:
+```
+$ type rbenv
+```
+Deve produzir uma saída do tipo: #=> *"rbenv is a function"*
+
+##### Instalando Ruby
+```
+$ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+$ rbenv install 2.2.0
+$ rbenv global 2.2.0
+```
+Por final, teste executando:
+```
+$ ruby -v
+```
+Se tudo der certo você vai ver uma saída do tipo: *_ruby 2.2.0p0 (2014-12-25 revision 49005)_*.
+
+Por último, instale o Bundler:
+```
+$ gem install bundler
+```
+Trecho retirado e traduzido de link:http://www.mccartie.com/2014/08/28/digital-ocean.html[Digital Ocean: Ubuntu, Nginx, Unicorn, Rails^]
