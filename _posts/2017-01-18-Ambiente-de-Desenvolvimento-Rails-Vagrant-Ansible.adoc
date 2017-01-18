@@ -5,7 +5,7 @@ Ola pessoal!
 
 Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.
 
-O ambiente é com posto por:
+.O ambiente é com posto por
 * Ubuntu 14.04 (trusty32)
 * Ruby 2.2.0 + rbevn
 * Gem Rails ~> 4.2
@@ -31,7 +31,7 @@ sudo dpkg -i vagrant_1.7.2_x86_64.deb
 sudo apt-get install linux-headers-$(uname -r)
 sudo dpkg-reconfigure virtualbox-dkms
 
-* WARNING: A versão do Vagrant tem que ser >= 1.5
+WARNING: A versão do Vagrant tem que ser >= 1.5
 
 Agora é instalar o Git. No windows faça download aqui, no linux:
 [source]
@@ -57,7 +57,7 @@ Depois que estiver tudo instalado, acesse o terminal do vagrant e crie uma nova 
 vagrant ssh
 rails new /vagrant
 ----
-* WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.
+WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.
 
 Aplicação deve ficar na pasta /vagrant pois essa é montada da sua maquina física na maquina virtual.
 
