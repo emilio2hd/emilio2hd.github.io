@@ -1,0 +1,126 @@
+= Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14
+:hp-tags: Ubuntu, Trusty, Ruby, Rails, Iniciantes, Desenvolvimento, Junior
+
+Vou deixar algumas dúvidas em forma de FAQ
+
+#### Como faço compilar meus assests para colocar em produção? +
+Instale o nodejs:
+[source]
+----
+sudo apt-get install nodejs
+----
+Na pasta do seu projeto, execute:
+[source]
+----
+bundle exec rake assets:precompile RAILS_ENV=production
+----
+#### Como faço para usar sqlite no meu projeto?
+Instale a lib libsqlite3-dev
+[source]
+----
+sudo apt-get install libsqlite3-dev
+----
+Adicione no Gemfile:
+[source]
+----
+gem 'sqlite3'
+----
+
+Execute:
+[source]
+----
+bundle install
+----
+Coloque no database.yml:
+[source,yaml]
+----
+development:
+  adapter: sqlite3
+  #database: ":memory:" # Se quiser banco em memória
+  database: db/development.sqlite3
+----
+#### Como faço para usar gem mysql2 no meu projeto?
+Instale a lib libmysqlclient-dev
+[source]
+----
+sudo apt-get install libmysqlclient-dev
+----
+Adicione no Gemfile:
+[source,ruby]
+----
+gem 'mysql2'
+----
+
+Execute:
+[source]
+----
+bundle install
+----
+Coloque no database.yml:
+[source,yaml]
+----
+development:
+  adapter: mysql2
+  host: localhost
+  port: 3307
+  username: root
+  password: _SENHA_
+  database: _NOME_DO_BANCO_
+----
+#### Como faço para usar gem postgresql no meu projeto?
+Instale as libs abaixo:
+[source]
+----
+sudo apt-get install postgresql-contrib libpq-dev
+----
+Adicione no Gemfile:
+[source,ruby]
+----
+gem 'pg'
+----
+Execute:
+[source]
+----
+bundle install
+----
+Crie o banco com:
+[source,sql]
+----
+sudo su postgres -c psql
+CREATE DATABASE _NOME_DO_BANCO_;
+\q
+----
+Configure a senha do usuário postgres:
+[source,sql]
+----
+sudo su postgres -c psql template1
+ALTER USER postgres WITH PASSWORD '_SENHA_';
+\q
+----
+Coloque no database.yml:
+[source,yaml]
+----
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: _SENHA_
+  database: _NOME_DO_BANCO_
+----
+#### Como faço para usar ImageMagick + RMagick?
+Instale as seguintes libs:
+[source]
+----
+sudo apt-get install imagemagick libmagickwand-dev
+----
+Adicione no Gemfile:
+[source,ruby]
+----
+gem 'rmagick'
+----
+Execute:
+[source]
+----
+bundle install
+----
