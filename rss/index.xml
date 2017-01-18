@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 14:54:00 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 15:00:49 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Dúvidas Frequentes de Iniciante em Rails com Ubuntu 14]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Vou deixar algumas dúvidas em forma de FAQ</p>
@@ -196,16 +196,34 @@ ALTER USER postgres WITH PASSWORD '_SENHA_';
 <div class="paragraph">
 <p>Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.</p>
 </div>
-<div class="paragraph">
-<p>O ambiente é com posto por:
-* Ubuntu 14.04 (trusty32)
-* Ruby 2.2.0 + rbevn
-* Gem Rails ~&gt; 4.2
-* SQlite 3 gem sqlite3
-* MySQL Server + gem mysql2
-* PostgreSQL 9.3 + gem pg
-* ImageMagick + rmagick gem
-* Vim</p>
+<div class="ulist">
+<div class="title">O ambiente é com posto por</div>
+<ul>
+<li>
+<p>Ubuntu 14.04 (trusty32)</p>
+</li>
+<li>
+<p>Ruby 2.2.0 + rbevn</p>
+</li>
+<li>
+<p>Gem Rails ~&gt; 4.2</p>
+</li>
+<li>
+<p>SQlite 3 gem sqlite3</p>
+</li>
+<li>
+<p>MySQL Server + gem mysql2</p>
+</li>
+<li>
+<p>PostgreSQL 9.3 + gem pg</p>
+</li>
+<li>
+<p>ImageMagick + rmagick gem</p>
+</li>
+<li>
+<p>Vim</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Primeiro, é necessário instalar Virtualbox, no windows, pode fazer download através deste link. Para linux, execute:</p>
@@ -230,12 +248,17 @@ sudo apt-get install linux-headers-$(uname -r)
 sudo dpkg-reconfigure virtualbox-dkms</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>WARNING: A versão do Vagrant tem que ser &gt;= 1.5</p>
-</li>
-</ul>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+A versão do Vagrant tem que ser &gt;= 1.5
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Agora é instalar o Git. No windows faça download aqui, no linux:</p>
@@ -274,12 +297,17 @@ vagrant up</code></pre>
 rails new /vagrant</code></pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>WARNING: No windows, vai ser necessário instalar Cygwin com openssh client.</p>
-</li>
-</ul>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+No windows, vai ser necessário instalar Cygwin com openssh client.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Aplicação deve ficar na pasta /vagrant pois essa é montada da sua maquina física na maquina virtual.</p>
