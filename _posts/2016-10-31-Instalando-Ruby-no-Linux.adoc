@@ -26,9 +26,10 @@ Verifique se foi instalado corretamente, execute o comando:
 ----
 $ type rbenv
 ----
-Deve produzir uma saída do tipo: #=> *"rbenv is a function"*
+Deve produzir uma saída do tipo: *_"rbenv is a function"_*
 
 ##### Instalando Ruby
+Execute no terminal:
 [source]
 ----
 $ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
