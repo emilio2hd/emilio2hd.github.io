@@ -1,1 +1,77 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Tue, 01 Nov 2016 02:18:23 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First post]]></title><link>https://emilio2hd.github.io/2016/10/31/First-post.html</link><guid isPermaLink="true">https://emilio2hd.github.io/2016/10/31/First-post.html</guid><category><![CDATA[HubPress]]></category><category><![CDATA[ Blog]]></category><category><![CDATA[ Open Source]]></category><dc:creator><![CDATA[Emílio S. do Carmo]]></dc:creator><pubDate>Mon, 31 Oct 2016 00:00:00 GMT</pubDate></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Just an ordinary developer]]></title><description><![CDATA[Sharing ideas and experiences]]></description><link>https://emilio2hd.github.io</link><image><url>images/8bit-dreaming.jpg</url><title>Just an ordinary developer</title><link>https://emilio2hd.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 18 Jan 2017 13:12:26 GMT</lastBuildDate><atom:link href="https://emilio2hd.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Instalando Ruby no Linux]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Neste pequeno post irei explicar como instalar ruby no linux. Estarei utilizando como base o ubuntu.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ sudo apt-get update
+$ sudo apt-get install curl git-core build-essential zlib1g-dev libssl-dev libreadline-dev libffi-dev libyaml-dev libsqlite3-dev sqlite3 libcurl4-openssl-dev libxml2-dev libxslt1-dev python-software-properties</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_instalando_rbenv">Instalando rbenv</h5>
+<div class="paragraph">
+<p>O rbenv será instalado na pasta home, seu caminho será adicionado o à variável $PATH e um comando de inicialização será adicionado ao ~/.bashrc</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+$ echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Para as alterações serem aplicadas, reinicie o shell:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ exec $SHELL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Verifique se foi instalado corretamente, execute o comando:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ type rbenv</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deve produzir uma saída do tipo: #&#8658; <strong>"rbenv is a function"</strong></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_instalando_ruby">Instalando Ruby</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+$ rbenv install 2.2.0
+$ rbenv global 2.2.0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Por final, teste executando:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ ruby -v</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Se tudo der certo você vai ver uma saída do tipo: <strong><em>ruby 2.2.0p0 (2014-12-25 revision 49005)</em></strong>.</p>
+</div>
+<div class="paragraph">
+<p>Por último, instale o Bundler:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ gem install bundler</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Trecho retirado e traduzido de <a href="http://www.mccartie.com/2014/08/28/digital-ocean.html" target="_blank">Digital Ocean: Ubuntu, Nginx, Unicorn, Rails</a></p>
+</div>
+</div>]]></description><link>https://emilio2hd.github.io/2016/10/31/Instalando-Ruby-no-Linux.html</link><guid isPermaLink="true">https://emilio2hd.github.io/2016/10/31/Instalando-Ruby-no-Linux.html</guid><category><![CDATA[Ruby]]></category><category><![CDATA[ Linux]]></category><category><![CDATA[ Instalação]]></category><dc:creator><![CDATA[Emílio S. do Carmo]]></dc:creator><pubDate>Mon, 31 Oct 2016 00:00:00 GMT</pubDate></item></channel></rss>
