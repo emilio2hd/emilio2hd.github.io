@@ -3,7 +3,7 @@
 
 Ola pessoal!
 
-Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar basear no Windows e no Ubuntu.
+Este tutorial tem o propósito de orientar a utilizar um ambiente de desenvolvimento, que fiz usando Vagrant e Ansible, para aqueles que querem iniciar os estudos com Ruby. Minha motivação maior foi pelo fato de muitos iniciantes sofrerem com questões de ambiente, então resolvi fazer isso. Vou abordar no Windows e no Ubuntu.
 
 .O ambiente é com posto por
 * Ubuntu 14.04 (trusty32)
